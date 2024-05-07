@@ -1,4 +1,5 @@
 "use client";
+import Contact from "@/components/contact";
 import Header from "@/components/header";
 import InitialPage from "@/components/initial-page";
 import ProjectsPage from "@/components/projects-page";
@@ -49,6 +50,7 @@ export default function HomePage() {
 			{/* CARDS - 1 HOMEPAGE (PADRAO),  2 PROJECTS, 3 CONTACTS */}
 			{page === 1 && <InitialPage />}
 			{page === 2 && <ProjectsPage />}
+			{page === 3 && <Contact />}
 		</main>
 	);
 }

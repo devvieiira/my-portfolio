@@ -1,6 +1,7 @@
 import project from "@/public/king-food.png";
 import wallpaper from "@/public/wallpaper.png";
 import Image from "next/image";
+import Link from "next/link";
 import { Separator } from "./ui/separator";
 
 const ProjectsPage = () => {
@@ -34,9 +35,11 @@ const ProjectsPage = () => {
 					<Separator className="bg-muted-foreground opacity-50" />
 				</div>
 				<div className="flex items-center justify-center p-2">
-					<span className="text-sm text-[#C9C9C9] hover:border-b-[#C9C9C9] hover:border-b">
-						Ir para o projeto
-					</span>
+					<Link href="https://app-food-iota.vercel.app/" target="_blank">
+						<span className="text-sm text-[#C9C9C9] hover:border-b-[#C9C9C9] hover:border-b">
+							Ir para o projeto
+						</span>
+					</Link>
 				</div>
 			</div>
 
