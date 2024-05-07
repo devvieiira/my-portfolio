@@ -1,13 +1,24 @@
+"use client";
 import jsIcon from "@/public/js-icon.png";
 import nodeIcon from "@/public/node-icon.png";
 import reactIcon from "@/public/react-icon.png";
 import tsIcon from "@/public/ts-icon.png";
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 import { Button } from "./ui/button";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "./ui/dialog";
 import { Separator } from "./ui/separator";
 
 const InitialPage = () => {
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<>
 			<div className="w-4/5 bg-foregroundsecundary rounded-3xl mt-10 py-3 px-5">
@@ -20,6 +31,7 @@ const InitialPage = () => {
 							className="hover:bg-transparent"
 							size="icon"
 							variant="ghost"
+							onClick={() => setIsOpen(true)}
 						>
 							<ChevronRightIcon className="text-primary" size={16} />
 						</Button>
@@ -62,6 +74,94 @@ const InitialPage = () => {
 					</div>
 				</div>
 			</div>
+
+			<Dialog open={isOpen} onOpenChange={setIsOpen}>
+				<DialogContent className="border-none bg-backgroundsecundary w-4/5 rounded-lg">
+					<DialogHeader>
+						<DialogTitle className="text-left text-base">
+							Linguagens que tenho conhecimento
+						</DialogTitle>
+					</DialogHeader>
+					<div className="flex flex-col justify-center items-center space-y-12 py-4">
+						{/* TYPESCRIPT */}
+						<div className="w-full flex items-center justify-around">
+							<div className="w-10 h-10 relative rounded-full">
+								<Image src={tsIcon} alt="Icone Typescript" fill />
+							</div>
+
+							<div className="bg-[#201F1F] w-[250px] h-[30px] rounded-full">
+								<div className="flex items-center justify-between fixed">
+									<span className="absolute top-[2px] text-[#C9C9C9]">1</span>
+									<span className="absolute left-[120px] top-[2px] text-[#C9C9C9]">
+										2
+									</span>
+									<span className="absolute left-60 top-[2px] text-[#C9C9C9]">
+										3
+									</span>
+								</div>
+								<div className="bg-primary h-[30px] w-[130px] rounded-full " />
+							</div>
+						</div>
+						{/* JAVASCRIPT */}
+						<div className="w-full flex items-center justify-around">
+							<div className="w-10 h-10 relative rounded-full">
+								<Image src={jsIcon} alt="Icone Typescript" fill />
+							</div>
+
+							<div className="bg-[#201F1F] w-[250px] h-[30px] rounded-full">
+								<div className="flex items-center justify-between fixed">
+									<span className="absolute top-[2px] text-[#C9C9C9]">1</span>
+									<span className="absolute left-[120px] top-[2px] text-[#C9C9C9]">
+										2
+									</span>
+									<span className="absolute left-60 top-[2px] text-[#C9C9C9]">
+										3
+									</span>
+								</div>
+								<div className="bg-primary h-[30px] w-[130px] rounded-full " />
+							</div>
+						</div>
+						{/* REACT */}
+						<div className="w-full flex items-center justify-around">
+							<div className="w-10 h-10 relative rounded-full">
+								<Image src={reactIcon} alt="Icone Typescript" fill />
+							</div>
+
+							<div className="bg-[#201F1F] w-[250px] h-[30px] rounded-full">
+								<div className="flex items-center justify-between fixed">
+									<span className="absolute top-[2px] text-[#C9C9C9]">1</span>
+									<span className="absolute left-[120px] top-[2px] text-[#C9C9C9]">
+										2
+									</span>
+									<span className="absolute left-60 top-[2px] text-[#C9C9C9]">
+										3
+									</span>
+								</div>
+								<div className="bg-primary h-[30px] w-[130px] rounded-full " />
+							</div>
+						</div>
+						{/* NODE */}
+						<div className="w-full flex items-center justify-around">
+							<div className="w-10 h-10 relative rounded-full">
+								<Image src={nodeIcon} alt="Icone Typescript" fill />
+							</div>
+
+							<div className="bg-[#201F1F] w-[250px] h-[30px] rounded-full">
+								<div className="flex items-center justify-between fixed">
+									<span className="absolute top-[2px] text-[#C9C9C9]">1</span>
+									<span className="absolute left-[120px] top-[2px] text-[#C9C9C9]">
+										2
+									</span>
+									<span className="absolute left-60 top-[2px] text-[#C9C9C9]">
+										3
+									</span>
+								</div>
+								<div className="bg-primary h-[30px] w-[50px] rounded-full " />
+							</div>
+						</div>
+					</div>
+				</DialogContent>
+			</Dialog>
 		</>
 	);
 };
